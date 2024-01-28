@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0; 
+            background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-creative-colorful-sport-background-picture-image_995415.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 85%;
+        }
+        .con1{
+            width: 50%;
+            height: 93vh;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+        .nav{
+            background-color: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(5px); 
+            border-radius: 10px; 
+            padding: 20px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            float: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .a{
+            text-decoration: none;
+            font-size: 40px;
+            font-family: cursive;
+            margin: 25px;
+            padding: 8px;
+            border: 2px solid black;
+            border-style:dashed;
+            border-radius: 20%;
+            color: rgb(99, 9, 99);
+            background-color: transparent;
+        }
+        .a:hover{
+            font-size: 46px;
+            padding: 4px;
+            background-color: #e99d0474;
+            color: rgb(4, 4, 71);
+        }
+        input[type="text"],input[type="password"]{
+            margin: 5px;
+            padding: 5px;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 20px;
+            height: 50px;
+            width: 25vw;
+        }
+        input::placeholder {
+            color: rgba(99, 9, 99, 0.47);
+            font-size: 28px;
+            text-align: center;
+          }
+          
+    </style>
+</head>
+<body>
+    <form action="/login">
+    <div class="con1">
+        <div class="nav">
+            <br><br>
+            <input type="text" name="username" placeholder="User Name">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" class="a" value="Log In">
+        </div>
+    </div>
+</form>
+</body>
+</html>
