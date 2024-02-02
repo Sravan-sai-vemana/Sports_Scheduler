@@ -1,0 +1,21 @@
+<code class="language-javascript" style="white-space: pre;"><span style="color: rgb(149, 65, 33);">const</span><span> getSingleTodo = </span><span style="color: rgb(149, 65, 33);">async</span><span> () =&gt; {
+</span><span>  </span><span style="color: rgb(149, 65, 33);">try</span><span> {
+</span><span>    </span><span style="color: rgb(149, 65, 33);">const</span><span> todo = </span><span style="color: rgb(149, 65, 33);">await</span><span> Todo.findOne({
+</span><span>      </span><span class="hljs-attr">where</span><span>: {
+</span><span>        </span><span class="hljs-attr">completed</span><span>: </span><span style="color: rgb(149, 65, 33);">false</span><span>,
+</span>      },
+<span>      </span><span class="hljs-attr">order</span><span>: [[</span><span style="color: rgb(33, 145, 97);">"id"</span><span>, </span><span style="color: rgb(33, 145, 97);">"DESC"</span><span>]],
+</span>    });
+
+<span>    </span><span style="color: rgb(0, 134, 179);">console</span><span>.log(todo.displayableString());
+</span><span>  } </span><span style="color: rgb(149, 65, 33);">catch</span><span> (error) {
+</span><span>    </span><span style="color: rgb(0, 134, 179);">console</span><span>.error(error);
+</span>  }
+};
+
+<span>(</span><span style="color: rgb(149, 65, 33);">async</span><span> () =&gt; {
+</span><span>  </span><span style="color: rgb(64, 128, 128); font-style: italic;">// await createTodo();</span><span>
+</span><span>  </span><span style="color: rgb(64, 128, 128); font-style: italic;">// await countItems();</span><span>
+</span><span>  </span><span style="color: rgb(149, 65, 33);">await</span><span> getSingleTodo();
+</span>})();
+</code>
