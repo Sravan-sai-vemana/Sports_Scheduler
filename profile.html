@@ -6,29 +6,29 @@
     <title>Document</title>
     <style>
         html,
-body {
-	background-color: rgba(255, 255, 255, 0);
-    margin: 0;
-    padding: 0;
-}
-.container {
-        margin-top: 10%;
-		height: 70vh;
-}
-svg {
-	height: 100%;
-	width: 100%;
-	position: relative;
-}
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    z-index: -1; /* Places the div behind other content */
-  }
+        body {
+            background-color: rgba(255, 255, 255, 0);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+                margin-top: 10%;
+                height: 70vh;
+        }
+        svg {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            z-index: -1; /* Places the div behind other content */
+        }
         .nav{
             background-color: rgba(177, 167, 167, 0.66);
             backdrop-filter: blur(5px); 
@@ -79,20 +79,19 @@ svg {
             font-weight: bold;
             margin-top: 200px;
         }
-        input[type='text'],input[type='date']{
+        input[type="text"],input[type="password"]{
             background-color: rgba(177, 167, 167, 0.66);
             border: 3px solid rgba(0, 0, 0, 0.749);
             height: 30px;
             border-radius: 7px;
-            width: 170px;
         }
-        input[type='text']:hover{
+        input[type="text"]:hover{
             border-color: #d3d3d3;
         }
-        input[type='date']:hover{
+        input[type="password"]:hover{
             border-color: #d3d3d3;
         }
-        input[type='submit']{
+        input[type="submit"]{
             background-color: transparent;
             text-decoration: none;
             font-size: 18px;
@@ -104,7 +103,7 @@ svg {
             border-radius: 20%;            
             color: rgb(99, 9, 99);
         }
-        input[type='submit']:hover{
+        input[type="submit"]:hover{
             font-size: 20px;
             padding: 4px;
             background-color: #e99d0474;
@@ -122,9 +121,9 @@ svg {
 </head>
 <body>
     <div class="nav">
-        <a href="home.html" class="active">Home</a>
+        <a href="home.html">Home</a>
         <a href="events.html">Events</a>
-        <a href="profile.html">Profile</a>
+        <a href="profile.html" class="active">Profile</a>
         <div class="logout">
             <a href="main.html">logout</a>
         </div>
@@ -132,42 +131,27 @@ svg {
     <br><br><br>
     <center>
     <div class="block">
-        <form action="/addEvent" method="get">
+        <form action="/changeDetails" method="get">
             <table>
+                
                 <tr>
-                    <th colspan="2"><u>POST NEW EVENT</u></th>
+                    <td id="blnk">Welcome</td>
                 </tr>
                 <tr>
-                    <td id="blnk">----------</td>
+                    <td><label>Full Name</label></td>
+                    <td><input type="text" name="name" value="'+doc[0].fullName+'"></td>
                 </tr>
                 <tr>
-                    <td><label>Event Name</label></td>
-                    <td><input type="text" name="eventName"></td>
+                    <td><label>User Name</label></td>
+                    <td><input type="text" name="username" value="'+doc[0].username+'" disabled></td>
                 </tr>
                 <tr>
-                    <td><label>Sport Name</label></td>
-                    <td><input type="text" name="sportName"></td>
+                    <td><label>Password</label></td>
+                    <td><input type="password" name="password" value="'+doc[0].password+'"></td>
                 </tr>
                 <tr>
-                    <td><label>Start Date</label></td>
-                    <td><input type="date" name="startDate"></td>
-                </tr>
-                <tr>
-                    <td><label>End Date</label></td>
-                    <td><input type="date" name="endDate"></td>
-                </tr>
-                <tr>
-                    <td><label>No of Players</label></td>
-                    <td><input type="text" name="noPlayers"></td>
-                </tr>
-                <tr>
-                    <td><label>Description</label></td>
-                    <td><input type="text" name="description"></td>
-                </tr>
-                <tr>
-                    
                     <td colspan="2">
-                        <center><input type="submit" value="Add Event"></center>
+                        <center><input type="submit" value="Change Details"></center>
                     </td>
                 </tr>
             </table>
